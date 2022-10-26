@@ -8,8 +8,6 @@ function handleClick(event) {
     Number.parseFloat(getComputedStyle(h2).getPropertyValue("--font-size")) +
     0.05;
 
-  // TODO: Add logic to change the text of the h2 elements
-  // If we clicked 'increase'...
   if (event.target.id === "increase") {
     h2.style.setProperty("--font-size", currentFontSize + 0.5 + "em");
   } else {
@@ -22,3 +20,9 @@ buttons.forEach(function (button) {
 });
 
 h2.style.setProperty("color", "red");
+
+const input = document.querySelector("input");
+
+input.addEventListener("input", function (event) {
+  h1.style.setProperty("--color", event.target.value);
+});
